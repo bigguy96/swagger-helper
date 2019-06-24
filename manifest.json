@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "Swagger Key Selector Version 2",
+    "version": "0.2.0",
+    "description": "Populates API key and JWT on the swagger interface",
+    "content_scripts": [{
+      "js": ["content.js"],
+      "matches": [
+                    "http://localhost:64294/swagger/ui/index",
+                    "https://wwwappstest.tc.gc.ca/Saf-Sec-Sur/13/MTAPI-DEV/swagger/ui/index",
+                    "https://wwwappstest.tc.gc.ca/Saf-Sec-Sur/13/MTAPI/swagger/ui/index",
+                    "https://wwwappstest.tc.gc.ca/Saf-Sec-Sur/13/MTAPI-TEST/swagger/ui/index"]
+    }],
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "browser_action": {
+      "default_title": "Set API key and JWT",
+      "default_popup": "popup.html"
+    },
+    "options_page": "options.html"
+  }

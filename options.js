@@ -4,17 +4,15 @@ window.addEventListener('load', () => {
     console.log("Loaded!");
     
     chrome.storage.sync.get("apiKey", (result) => {               
-        if (!chrome.runtime.error) {
-            console.log(result);
+        if(result.apiKey) {
             document.getElementById("txtApiKey").value = result.apiKey;
-          }       
+        }       
     });
 
     chrome.storage.sync.get("jwt", (result) => {
-        if(!chrome.runtime.error){
-            console.log();
+        if(result.jwt) {
             document.getElementById("txtJwt").value = result.jwt;
-        }       
+        }        
     });
 });
 
@@ -28,12 +26,18 @@ document.getElementById("btnSubmit").addEventListener("click", () => {
     console.log(jwt);
 
     chrome.storage.sync.set({"apiKey": apiKey, "jwt": jwt}, () => {
-        console.log('set storage called');
-
-        if (chrome.runtime.error) {
-            console.log("Runtime error in set storage.");
-          }
-
+        console.log('Set storage called');
+        
         close();
+                  
     });   
+});
+
+document.getElementById("btnClear").addEventListener("click", () => {
+    let answer = confirm("Are you sure you want to delete the stored API key and JWT?");
+    
+    if (answer === true) {
+        console.log("Clear storage");
+        chrome.storage.sync.clear();
+    }    
 });

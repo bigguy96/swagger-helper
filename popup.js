@@ -7,11 +7,15 @@ document.getElementById("btnSubmit").addEventListener("click", () => {
     let jwt = "";
 
     chrome.storage.sync.get("apiKey", (result) => {        
-        api = result.apiKey;
+        if (result.apiKey) {            
+            api = result.apiKey;
+          }                
     });
 
     chrome.storage.sync.get("jwt", (result) => {
-        jwt = result.jwt;        
+        if (result.jwt) {                 
+            jwt = result.jwt;        
+          }        
     });
 
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {

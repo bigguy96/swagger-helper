@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "Swagger Key Selector Version 2",
+    "name": "MTOA Swagger Helper Version 2",
     "version": "0.2.0",
     "description": "Populates API key and JWT on the swagger interface",
     "content_scripts": [{

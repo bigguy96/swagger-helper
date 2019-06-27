@@ -3,8 +3,8 @@
 document.getElementById("btnSubmit").addEventListener("click", () => {
     console.log('button clicked');
 
-    let api = "";
-    let jwt = "";
+    let api = "n/a";
+    let jwt = "n/a";
 
     chrome.storage.sync.get("apiKey", (result) => {        
         if (result.apiKey) {            

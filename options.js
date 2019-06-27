@@ -28,16 +28,17 @@ document.getElementById("btnSubmit").addEventListener("click", () => {
     chrome.storage.sync.set({"apiKey": apiKey, "jwt": jwt}, () => {
         console.log('Set storage called');
         
-        close();
-                  
+        close();                  
     });   
 });
 
-document.getElementById("btnClear").addEventListener("click", () => {
+document.getElementById("btnClear").addEventListener("click", (e) => {
     let answer = confirm("Are you sure you want to delete the stored API key and JWT?");
     
     if (answer === true) {
         console.log("Clear storage");
         chrome.storage.sync.clear();
-    }    
+    }
+    
+    e.preventDefault();
 });

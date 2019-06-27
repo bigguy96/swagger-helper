@@ -7,8 +7,8 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         body {
-            width: 400px !important;
-            background-color: #FFF;
+            width: 700px !important;
+            background-color: #DDD;
             padding: 8px;
         }
 
@@ -21,16 +21,16 @@
 <body>
     <form>
         <fieldset>
-            <legend><strong>API Key and JWT Storage</strong></legend>
+            <legend><strong>Manage API Key and JWT</strong></legend>
             <div class="form-group">
                 <label for="services">Service:</label>
-                <select id="services" class="form-control" readonly>
+                <select id="services" class="form-control" disabled>
                     <option value="mtoa">MTOA</option>                    
                 </select>
             </div>
             <div class="form-group">
                 <label for="environment">Environment:</label>
-                <select id="environment" class="form-control">
+                <select id="environment" class="form-control" disabled>
                     <option value="dev">Development</option>
                     <option value="acc">Acceptance</option>
                     <option value="preacc">Pre-Acceptance</option>
@@ -49,7 +49,7 @@
             </div>
 
             <button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
-            <button type="reset" id="btnClear" class="btn btn-default">Clear</button>
+            <button type="reset" id="btnClear" class="btn btn-secondary">Clear</button>
         </fieldset>
     </form>
 
